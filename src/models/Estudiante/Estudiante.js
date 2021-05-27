@@ -1,9 +1,7 @@
 'use strict';
 
-const Mongo = require('../../../database/Mongo')
-
-const db = new Mongo();
-
+const db = require('../../../database/queries')
+const collection = require('../../../database/collections.json')
 class Estudiante {
     
     constructor(nombre, legajo,email) {
@@ -14,12 +12,35 @@ class Estudiante {
 
     async guardar(){
         try {
-            await db.insert('estudiantes', this)
+            await db.insert(collection.estudiantes, this)
         } catch(err) {
-
             throw new Error(err);
         }
     } 
+
+    async actualizar(id) {
+        try {
+            await db.update(collection.estudiantes, id, this)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    static get(){
+        try {
+            return db.get(collection.estudiantes)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    static getById(id) {
+        try {
+            return db.findById(collection.estudiantes, id)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 
 }

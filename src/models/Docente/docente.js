@@ -1,8 +1,8 @@
 'use strict';
 
-const Mongo = require('../../../database/Mongo')
+const db = require('../../../database/queries')
+const collection = require('../../../database/collections.json')
 
-const db = new Mongo()
 
 class Docente {
 
@@ -13,7 +13,7 @@ class Docente {
 
     async guardar() {
         try {
-            await db.insert('docentes', this)
+            await db.insert(collection.docentes, this)
         } catch (error) {   
             throw new Error(err)
         }
@@ -21,11 +21,21 @@ class Docente {
 
     static get(){
         try {
-            return db.get('docentes')
+            return db.get(collection.docentes)
         } catch (error) {
             console.log(error);
         }
     }
+
+    static getById(id){
+        try {
+            return db.findById(collection.docentes,id)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+   
 };
 
 module.exports= Docente
