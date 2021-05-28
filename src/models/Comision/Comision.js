@@ -3,7 +3,7 @@
 const db = require('../../../database/queries');
 const collection = require('../../../database/collections.json');
 
-module.exports = class Comision {
+     class Comision {
     constructor( materia,numero,docentes,estudiantes,calificaciones ) {
 
         this.materia = materia; 
@@ -21,4 +21,13 @@ module.exports = class Comision {
         }
     }
 
+    static get(){
+        try {
+            return db.get(collection.comisiones)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
+
+module.exports = Comision

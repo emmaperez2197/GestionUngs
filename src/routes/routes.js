@@ -1,12 +1,13 @@
 'use strict';
 /////Api Post/////
 const createEstudiante = require('../routes/Estudiante/create');
-const createDocente = require('../routes/Docente/create')
-const createComision = require('../routes/Comision/create')
+const createDocente = require('../routes/Docente/create');
+const createComision = require('../routes/Comision/create');
 
 /////Api Get/////
-const traerDocente = require('../routes/Docente/get')
-const trarEstudiantes= require('../routes/Estudiante/get')
+const traerDocente = require('../routes/Docente/get');
+const trarEstudiantes= require('../routes/Estudiante/get');
+const traerComisiones = require('../routes/Comision/get')
 
 /////Api getById /////
 const traerUnDocente = require('../routes/Docente/getById')
@@ -26,6 +27,7 @@ module.exports = [
     trarUnEstudiantes,
     modificarEstudiante,
     modificarDocente,
-    createComision
+    createComision,
+    traerComisiones
 
 ]
