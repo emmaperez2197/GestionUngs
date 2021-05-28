@@ -19,6 +19,14 @@ class Docente {
         }
     }
 
+    async actualizar (id) {
+        try {
+            await db.update(collection.docentes, id, this)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     static get(){
         try {
             return db.get(collection.docentes)
