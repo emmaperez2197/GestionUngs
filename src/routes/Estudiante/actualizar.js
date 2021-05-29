@@ -7,7 +7,7 @@ const app = express();
 
 const Estudiante = require('../../models/Estudiante/Estudiante')
 
-const {validateName, validateLegajo,validateEmail} = require('../../validations/validation');
+const {validateString, validateNumber,validateEmail} = require('../../validations/validation');
  
 
 app.put('/estudiantes/:id', async (req, res) => {
@@ -20,10 +20,10 @@ app.put('/estudiantes/:id', async (req, res) => {
     validationBody(body,'email', res);
 
 
-    if(!validateName(body.nombre))
+    if(!validateString(body.nombre))
         return res.status(400).json(`El valor ingresado no es un nombre: ${body.nombre}`)
 
-    if (!validateLegajo(body.legajo))
+    if (!validateNumber(body.legajo))
         return res.status(400).json(`El valor ingresado no es un legajo: ${body.legajo}`)
 
     if (!validateEmail(body.email))

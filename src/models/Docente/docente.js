@@ -8,7 +8,8 @@ class Docente {
 
     constructor(nombre, dni) {
         this.nombre = nombre,
-        this.dni = dni
+        this.dni = dni,
+        this.status = 'active'
     }
 
     async guardar() {
@@ -42,6 +43,8 @@ class Docente {
             console.log(error);
         }
     }
+
+    
 
    
 };

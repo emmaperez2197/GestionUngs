@@ -7,7 +7,7 @@ const app = express();
 const Docente = require('../../models/Docente/docente')
 
 
-const {validateNombre, validateDni} = require('../../validations/validation')
+const {validateString, validateDni} = require('../../validations/validation')
 
 app.post('/docente', async (req, res)=> {
 
@@ -16,7 +16,7 @@ app.post('/docente', async (req, res)=> {
     validatorBody(body,'nombre',res)
     validatorBody(body,'dni',res)
 
-    if (!validateNombre(body.nombre))
+    if (!validateString(body.nombre))
         return res.status(400).json(`El valor ingresado no es un nombre: ${body.nombre}`)
 
     if (!validateDni(body.dni))

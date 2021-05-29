@@ -6,7 +6,7 @@ const app = express()
 
 const Docente = require('../../models/Docente/docente')
 
-const {validateName, validateLegajo,validateEmail} = require('../../validations/validation');
+const {validateString, validateNumber,validateEmail} = require('../../validations/validation');
 
 app.put('/docentes/:id', async (req, res) => {
 
@@ -15,7 +15,6 @@ app.put('/docentes/:id', async (req, res) => {
 
     const docenteActualizado = new Docente(body.nombre, body.dni);
     
-    console.log(docenteActualizado);
     await docenteActualizado.actualizar(id)
 
     res.json({

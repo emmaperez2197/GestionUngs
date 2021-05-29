@@ -18,6 +18,8 @@ const traerUnaComision = require('../routes/Comision/getById')
 const modificarEstudiante = require('../routes/Estudiante/actualizar')
 const modificarDocente = require('../routes/Docente/actualizar')
 
+//Api Delete////
+const eliminarDocente = require('../routes/Docente/dalete')
 
 module.exports = [
     createEstudiante, 
@@ -30,6 +32,7 @@ module.exports = [
     modificarDocente,
     createComision,
     traerComisiones,
-    traerUnaComision
+    traerUnaComision,
+    eliminarDocente
 
 ]
