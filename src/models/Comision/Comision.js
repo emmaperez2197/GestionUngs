@@ -28,6 +28,14 @@ const collection = require('../../../database/collections.json');
             console.log(error);
         }
     }
+
+    static getById(id){
+        try {
+            return db.findById(collection.comisiones, id)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = Comision

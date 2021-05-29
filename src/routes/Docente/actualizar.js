@@ -6,7 +6,7 @@ const app = express()
 
 const Docente = require('../../models/Docente/docente')
 
-const {validateName, validateLegajo,validateEmail} = require('../../validations/validation-estudiante');
+const {validateName, validateLegajo,validateEmail} = require('../../validations/validation');
 
 app.put('/docentes/:id', async (req, res) => {
 

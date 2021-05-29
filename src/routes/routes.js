@@ -12,6 +12,7 @@ const traerComisiones = require('../routes/Comision/get')
 /////Api getById /////
 const traerUnDocente = require('../routes/Docente/getById')
 const trarUnEstudiantes = require('../routes/Estudiante/getById')
+const traerUnaComision = require('../routes/Comision/getById')
 
 /////Api Put/////
 const modificarEstudiante = require('../routes/Estudiante/actualizar')
@@ -28,6 +29,7 @@ module.exports = [
     modificarEstudiante,
     modificarDocente,
     createComision,
-    traerComisiones
+    traerComisiones,
+    traerUnaComision
 
 ]
