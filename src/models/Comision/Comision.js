@@ -11,6 +11,7 @@ const collection = require('../../../database/collections.json');
         this.docentes = docentes;
         this.estudiantes = estudiantes;
         this.calificaciones = calificaciones;
+        this.status = 'active'
     }
 
     async guardar() {
@@ -19,6 +20,14 @@ const collection = require('../../../database/collections.json');
         } catch (error) {
             console.log(error);
         }
+    }
+
+    async actualizar(id) {
+       try {
+           await db.update(collection.comisiones, id, this)
+       } catch (error) {
+            console.log(error);
+       }
     }
 
     static get(){
@@ -36,6 +45,7 @@ const collection = require('../../../database/collections.json');
             console.log(error);
         }
     }
+
 }
 
 module.exports = Comision

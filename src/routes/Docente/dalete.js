@@ -11,7 +11,7 @@ app.delete('/docentes/:id', async (req, res) => {
     const id = req.params.id
 
     const {nombre, dni} = await Docente.getById(id)
-    
+
     const docenteEliminado = new Docente(nombre,dni);
     docenteEliminado.status = 'inactive';
 

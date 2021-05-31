@@ -8,6 +8,7 @@ class Estudiante {
         this.nombre = nombre;
         this.legajo = legajo;
         this.email = email;
+        this.status = 'active'
     }
 
     async guardar(){
