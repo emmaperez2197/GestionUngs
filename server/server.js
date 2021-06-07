@@ -14,6 +14,6 @@ app.use(bodyParser.json())
 app.use(require('../src/routes/routes'))
 
 app.listen(process.env.PORT, ( ) => {
-    console.log('escuchando el puerto ', 3000);
+    console.log('escuchando el puerto ',process.env.PORT );
 });
 

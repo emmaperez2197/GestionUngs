@@ -3,6 +3,7 @@
 const createEstudiante = require('../routes/Estudiante/create');
 const createDocente = require('../routes/Docente/create');
 const createComision = require('../routes/Comision/create');
+const createUngs = require('../routes/Ungs/create')
 
 /////Api Get/////
 const traerDocente = require('../routes/Docente/get');
@@ -13,6 +14,7 @@ const traerComisiones = require('../routes/Comision/get');
 const traerUnDocente = require('../routes/Docente/getById');
 const trarUnEstudiantes = require('../routes/Estudiante/getById');
 const traerUnaComision = require('../routes/Comision/getById');
+const traerUngs = require('../routes/Ungs/getById');
 
 /////Api Put/////
 const modificarEstudiante = require('../routes/Estudiante/actualizar');
@@ -39,5 +41,7 @@ module.exports = [
     traerUnaComision,
     eliminarDocente,
    eliminarComision,
-   eliminarEstudiante
+   eliminarEstudiante,
+   createUngs,
+   traerUngs
 ]
