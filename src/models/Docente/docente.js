@@ -40,7 +40,7 @@ class Docente {
         try {
             return db.findById(collection.docentes,id)
         } catch (error) {
-            console.log(error);
+            return error;
         }
     }
 

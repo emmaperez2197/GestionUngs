@@ -19,7 +19,7 @@ class Ungs {
         try {
             return db.findById(collection.ungs, id)
         } catch (error) {
-            console.log(error);
+            return error;
         }
     }
 }

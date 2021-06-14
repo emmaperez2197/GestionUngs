@@ -28,7 +28,7 @@ module.exports = {
         try {
             return  (await db.connect()).collection(collection).findOne({ _id: ObjectID(id)})
         } catch (error) {
-            console.log(error);
+           return error;
         }
     },
 

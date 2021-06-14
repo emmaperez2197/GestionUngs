@@ -26,6 +26,9 @@ const eliminarDocente = require('../routes/Docente/dalete')
 const eliminarComision = require('../routes/Comision/delete')
 const eliminarEstudiante = require('../routes/Estudiante/delete')
 
+/// Api Ejercicios
+const cursaCon = require('../routes/Ungs/cursaCon/cursaCon')
+
 module.exports = [
     createEstudiante, 
     createDocente,
@@ -43,5 +46,6 @@ module.exports = [
    eliminarComision,
    eliminarEstudiante,
    createUngs,
-   traerUngs
+   traerUngs,
+   cursaCon
 ]
