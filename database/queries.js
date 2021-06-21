@@ -15,9 +15,9 @@ module.exports = {
 		}
 	},
 
-    get: async (collection) => {
+    get: async (collection, filters = {}) => {
 		try {
-			return (await db.connect()).collection(collection).find({}).toArray();
+			return (await db.connect()).collection(collection).find(filters).toArray();
 			
 		} catch (error) {
 			console.log(error);
@@ -31,6 +31,14 @@ module.exports = {
            return error;
         }
     },
+
+	// findByFilter: async (collection, filters) => {
+	// 	try {
+	// 		return (await db.connect()).collection(collection).find
+	// 	} catch (error) {
+	// 		return error
+	// // 	}
+	// },
 
     update: async (collection, id, obj) => {
 		return (await db.connect()).collection(collection)

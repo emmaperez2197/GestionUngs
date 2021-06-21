@@ -30,9 +30,9 @@ const collection = require('../../../database/collections.json');
        }
     }
 
-    static get(){
+    static get(filters = {}){
         try {
-            return db.get(collection.comisiones)
+            return db.get(collection.comisiones, filters)
         } catch (error) {
             console.log(error);
         }
