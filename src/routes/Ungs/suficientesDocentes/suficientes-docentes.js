@@ -16,14 +16,22 @@ app.post('/ungs/suficientes-docentes', async (req, res) => {
 
     const comisiones = await Comision.get({ _id: { $in: idsComisiones } })
 
+    let suficientesDocentes = true
     comisiones.forEach(({estudiantes, docentes}) => {
-        
+    
         const cantDocentesQDeberiaHaber = Math.trunc(estudiantes.length / 20);
-      
+        
+        if ( docentes.length < cantDocentesQDeberiaHaber) {
+            
+            suficientesDocentes = suficientesDocentes && false
+            console.log('entro');
+        }
+        console.log(cantDocentesQDeberiaHaber, docentes.length);
+    
     });
   
 
-    res.json({ message: comisiones })
+    res.json({ message: suficientesDocentes })
 })
  
 module.exports = app
