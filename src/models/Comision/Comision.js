@@ -46,6 +46,13 @@ const collection = require('../../../database/collections.json');
         }
     }
 
+   static estudianteConMejorNota({ calificaciones, estudiantes}) {
+
+        const mejorCalificacion = Math.max.apply(null, calificaciones)
+        console.log(mejorCalificacion);
+        return estudiantes[calificaciones.indexOf(mejorCalificacion)]
+    }
+
 }
 
 module.exports = Comision

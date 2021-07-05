@@ -27,9 +27,9 @@ class Estudiante {
         }
     }
 
-    static get(){
+    static get(filters = {}){
         try {
-            return db.get(collection.estudiantes)
+            return db.get(collection.estudiantes, filters)
         } catch (error) {
             console.log(error);
         }

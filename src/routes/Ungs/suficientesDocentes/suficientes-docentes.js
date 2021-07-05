@@ -11,7 +11,7 @@ app.post('/ungs/suficientes-docentes', async (req, res) => {
     const {idUngs} = req.body
     
     const ungs = await Ungs.getById(idUngs)
-
+    
     const idsComisiones = ungs.comisiones.map(id => ObjectID(id));
 
     const comisiones = await Comision.get({ _id: { $in: idsComisiones } })

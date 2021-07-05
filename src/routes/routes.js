@@ -29,6 +29,7 @@ const eliminarEstudiante = require('../routes/Estudiante/delete')
 /// Api Ejercicios
 const cursaCon = require('../routes/Ungs/cursaCon/cursaCon')
 const suficientesDocentes = require('../routes/Ungs/suficientesDocentes/suficientes-docentes')
+const losMejores = require('../routes/Ungs/losMejores/losMejores')
 
 module.exports = [
     createEstudiante, 
@@ -49,5 +50,6 @@ module.exports = [
    createUngs,
    traerUngs,
    cursaCon,
-   suficientesDocentes
+   suficientesDocentes,
+   losMejores
 ]

@@ -10,8 +10,7 @@ const Comision = require('../../../models/Comision/Comision');
 
 app.post('/ungs/cursa-con/:idEstudiante/:idDocente', async (req, res) => {
 
-    const {body} = req;
-    const {idUngs} = body;
+    const {idUngs} = req.body;
     const {idEstudiante, idDocente} = req.params;
 
     const ungs = await Ungs.getById(idUngs)
