@@ -31,7 +31,7 @@ const cursaCon = require('../routes/Ungs/cursaCon/cursaCon')
 const suficientesDocentes = require('../routes/Ungs/suficientesDocentes/suficientes-docentes')
 const losMejores = require('../routes/Ungs/losMejores/losMejores')
 const alumonosDe = require('../routes/Ungs/alumnosDe/alumnosDe')
-
+const unicaComision = require('../routes/Ungs/unicaComision/unicaComision')
 module.exports = [
     createEstudiante, 
     createDocente,
@@ -53,5 +53,7 @@ module.exports = [
    cursaCon,
    suficientesDocentes,
    losMejores,
-   alumonosDe
+   alumonosDe,
+   unicaComision
+
 ]

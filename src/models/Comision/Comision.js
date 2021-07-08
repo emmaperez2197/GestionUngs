@@ -53,6 +53,11 @@ const collection = require('../../../database/collections.json');
         return estudiantes[calificaciones.indexOf(mejorCalificacion)]
     }
 
+   static estaDocente(idDocente, docentes) {
+        return docentes.filter(docente => docente === idDocente)
+    }
+
+ 
 }
 
 module.exports = Comision
