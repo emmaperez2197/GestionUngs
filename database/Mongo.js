@@ -19,6 +19,6 @@ class Mongo {
 			return e;
 		}
 	}
-}
+}    
 
 module.exports = Mongo;
